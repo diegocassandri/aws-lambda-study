@@ -1,0 +1,25 @@
+{
+  "name": "aws-lambda",
+  "version": "1.0.0",
+  "description": "Consulta de CEP usando AwsLambda",
+  "main": "handler.js",
+  "scripts": {
+    "deploy": "serverless deploy -v"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/diegocassandri/aws-lambda-projects.git"
+  },
+  "keywords": [
+    "lambda"
+  ],
+  "author": "Diego Cassandri",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/diegocassandri/aws-lambda-projects/issues"
+  },
+  "homepage": "https://github.com/diegocassandri/aws-lambda-projects#readme",
+  "dependencies": {
+    "cep-promise": "^3.0.7"
+  }
+}

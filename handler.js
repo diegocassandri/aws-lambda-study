@@ -1,18 +1,28 @@
 'use strict';
+const cep = require ('cep-promise');
 
-module.exports.hello = async event => {
+module.exports.findOneCep =  async event => {
+  
+  let cepString = event.pathParameters.cep;
+  let statusCode;
+  let body;
+  
+  
+  try {
+      const response = await cep(cepString);
+   
+      this.statusCode = 200;
+      this.body = response;
+      
+  } catch (err) {
+      this.statusCode = 400;
+      this.body = err;
+  }
+  
+
   return {
-    statusCode: 200,
-    body: JSON.stringify(
-      {
-        message: 'Go Serverless v1.0! Your function executed successfully!',
-        input: event,
-      },
-      null,
-      2
-    ),
-  };
-
-  // Use this code if you don't use the http event with the LAMBDA-PROXY integration
-  // return { message: 'Go Serverless v1.0! Your function executed successfully!', event };
+    statusCode :  this.statusCode,
+    body : JSON.stringify(this.body)
+  }
+  
 };
