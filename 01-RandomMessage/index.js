@@ -5,7 +5,7 @@ let messages = [
 ];
 
 exports.handler = async (event,context) => {
-    let messsage = messages[Math.floor(Math.random()*10)];
+    let message = messages[Math.floor(Math.random()*10)];
 
     return message;
-}
+};
