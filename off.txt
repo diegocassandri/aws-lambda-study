@@ -1,0 +1,38 @@
+
+1 - Busca dia limite para execução da regra.
+
+2 - Verifica se a data da execução é dentro do período de execução. Dia de execução.
+
+3-  Se sim, chama função que processa pendências.
+
+4- Busca pendências de pagamento da competência.
+
+5 - Atualiza a pendência com a flag de processamento.
+
+   6 - Busca rateios do pagamento.
+
+      7 - Busca Receita Bruta.
+
+      8 - Busca % de Iss da cidade.
+
+      9 - Busca próxima sequencia do pagamento (RPA)
+
+      10 - Inicia Transação 
+          10.1 - Insere o pagamento da RPA chamando WS Nativo.
+          10.2 - Atualiza dados de pagamento (campos customizados na tabela de RPA)
+          10.3 - Apaga registros de rateios temporário
+      15 - Finaliza Transação
+    
+    16 - Apaga registro de pagamento temporário
+
+    17 - Gera Recibo - chamando webservice de relatório. O mesmo insere o documento na fica complementar do terceiro.
+
+18 - *** Caso aconteça algum erro no processo, retorna as pendência para não processadas. Inclusive as já processadas.
+
+19  - Se ocorreu erro envia email para o Marivaldo.
+
+20 - Finaliza a execução da regra.
+
+
+
+
